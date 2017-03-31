@@ -60,9 +60,17 @@ export const drawScoreBoard = (rounds, score, highScore) => {
 }
 
 export const drawClickToStart = (level) => {
+
     _ctx.fillStyle = "grey";
-    _ctx.font = "24px Helvetica";
+    _ctx.font = "36px Helvetica";
     _ctx.textAlign = "left";
     _ctx.textBaseline = "top";
-    _ctx.fillText("Click to start Level " + level, 250, 175)
+    _ctx.fillText("Click to start Level " + level, 205, 175)
+
+    _ctx.fillStyle = "black";
+    _ctx.font = "36px Helvetica";
+    _ctx.textAlign = "left";
+    _ctx.textBaseline = "top";
+    _ctx.fillText("Click to start Level " + level, 203, 173)
+
 }

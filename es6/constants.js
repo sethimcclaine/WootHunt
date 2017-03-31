@@ -1,4 +1,5 @@
 //CONSTANTS
+export const BOOSTER = 2; //Increases speed of each level by x levels (to get the borring ones out of the way)
 export const HEIGHT = 414; //Canvas Height
 export const WIDTH = 736; //Canvas Width
 export const XMIN = 0;

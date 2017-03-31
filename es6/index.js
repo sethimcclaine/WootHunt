@@ -1,7 +1,7 @@
 import { random } from './utils';
 import { HEIGHT, WIDTH, XMIN, YMIN, TARGET, XMAX, YMAX, FLASH_OFFSET, FLASH_LENGTH,
     COLLISION_PADDING, DUCKSTATE, HYPERSPEED, ROUNDS_PER_LEVEL, WINNING_THRESHOLD,
-    SCORE_MAP, DIRECTION } from './constants';
+    SCORE_MAP, DIRECTION, BOOSTER } from './constants';
 import { setCanvasData, drawImageBackground, drawImageForeground, drawShotgunShells, drawTarget, drawFlash, drawScoreBoard,
     drawClickToStart } from './canvasActions';
 import { getImages } from './images';
@@ -101,7 +101,7 @@ const bang = (e) => {
  */
 const checkDestination = (min, max, current, destination) => {
     //Recalculate destination if we reach a wall or destination with in the padding of the level
-    if(Math.abs(current - destination) <= state.level || current <= min ||  current >= max) {
+    if(Math.abs(current - destination) <= (state.level + BOOSTER) || current <= min ||  current >= max) {
         return random(min, max);
     } else {
         return destination;
@@ -117,10 +117,10 @@ const updateAxis = (current, destination, axis) => {
     //Using state.level as the speed of the target
     if(current > destination) {
         state.target.direction[axis] = DIRECTION.LEFT;
-        return current -= state.level;
+        return current -= (state.level + BOOSTER);
     } else {
         state.target.direction[axis] = DIRECTION.RIGHT;
-        return current += state.level;
+        return current += (state.level + BOOSTER);
     }
 };
 /**

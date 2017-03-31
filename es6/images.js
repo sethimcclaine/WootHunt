@@ -14,7 +14,7 @@ export const getImages = (render) => {
     };
 
     images.background.onload = render;
-    images.background.src = 'assets/drones/background2.jpg';
+    images.background.src = 'assets/drones/background3.jpg';
     images.foreground.onload = render;
     images.foreground.src = 'assets/drones/foreground.png';
     images.shells.src = 'assets/ducks/shells.png';
